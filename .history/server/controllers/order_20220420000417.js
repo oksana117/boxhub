@@ -37,7 +37,6 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newOrder = Order({
       "id": req.body.id,
-      "created": req.body.created,
       "status": req.body.status,
       "customer": req.body.customer,
       "SKU": req.body.SKU,
@@ -91,8 +90,8 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedOrder = Order({
       "_id": id,
       "id": req.body.id,
-      "created":req.body.created,
       "status": req.body.status,
+      "created"
       "customer": req.body.customer,
       "SKU": req.body.SKU,
       "photo": req.body.photo,

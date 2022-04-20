@@ -42,13 +42,13 @@
 
                
                 <% for(let count = 0; count <OrderList.length; count++) { %>
-                <%OrderList.sort((a,b)=> (b.created - a.created));%> 
+                <%OrderList.sort((a,b)=> (a.customer<b.customer)*-1);%> 
                   <tr>
-                       <td class="text-center col-1"><%= OrderList[count].id %> </td>
-                       <td class="text-center col-2"><%= OrderList[count].created.toDateString() %></td>
-                       <td class="text-center col-1"><%= OrderList[count].status %></td>
-                       <td class="text-center col-2"><%= OrderList[count].customer %></td>
-                       <td class="text-center col-2"><%= OrderList[count].SKU %></td>
+                       <td class="text-center col-2"><%= OrderList[count].id %> </td>
+                       <td class="text-center col-2"><%= OrderList[count].created.getDate().toString().padStart(2, '0') %></td>
+                       <td class="text-center col-4"><%= OrderList[count].status %></td>
+                       <td class="text-center col-4"><%= OrderList[count].customer %></td>
+                       <td class="text-center col-4"><%= OrderList[count].SKU %></td>
                        <td class="text-center col-4"><%= OrderList[count].photo %></td>
                        <td class="text-center col-4"><%= OrderList[count].condition %></td>
                        <td class="text-center col-4"><%= OrderList[count].size %></td>

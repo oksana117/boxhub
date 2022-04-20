@@ -37,7 +37,6 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newOrder = Order({
       "id": req.body.id,
-      "created": req.body.created,
       "status": req.body.status,
       "customer": req.body.customer,
       "SKU": req.body.SKU,
@@ -78,7 +77,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('order/edit', {title: 'Edit the order', order: orderToEdit})
+            res.render('order/edit', {title: 'Edit the order'}, order:ored)
         }
     });
 }
@@ -91,7 +90,6 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedOrder = Order({
       "_id": id,
       "id": req.body.id,
-      "created":req.body.created,
       "status": req.body.status,
       "customer": req.body.customer,
       "SKU": req.body.SKU,

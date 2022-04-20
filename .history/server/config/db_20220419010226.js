@@ -1,6 +1,6 @@
 module.exports =
 {
-    "URI": "mongodb://localhost/order"
+    "URI": "mongodb://localhost/orders"
     //URI connection to a cluster collections 
 
     

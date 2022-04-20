@@ -6,9 +6,11 @@ let OrdersSchema = mongoose.Schema({
       type: String
     },
     created: {
-     type: Date
+     2021-05-05   
+    //type: Date
+    //default: Date.now
     },
-   
+    // can do default setting for Date.now for creating an order
     status: {
  
       type: String
