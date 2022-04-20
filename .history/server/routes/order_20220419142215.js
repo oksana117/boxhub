@@ -1,0 +1,16 @@
+
+'use strict';
+module.exports = function(app) {
+  var order = require('../controllers/order');
+
+  //  Routes
+  app.route('/orders')
+    .get(order.list_all_orders)
+    .post(order.create_order);
+
+
+  app.route('/orders/:orderId')
+    .get(order.read_order)
+    .put(order.update_order)
+    .delete(order.delete_order);
+};

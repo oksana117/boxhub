@@ -1,0 +1,29 @@
+<!-- Oksana Koshulap, 301167025, June 4, 2021-->
+
+
+ <link rel="icon" href="../public/Assets/images/oksana_logov2.png" type="image/x-icon"> 
+
+<%- include partials/header.ejs %> 
+
+
+<%- include partials/main_nav.ejs %>   
+
+
+<!--Main content -->
+<main class="container"> 
+    <div class="jumbotron">
+      <h1 class="display-4"></h1>
+    </div>
+</main>  
+ <!-- detects which title page is active so displays the correct content--> 
+ 
+ <!-- home content-->
+ <% if (title == 'Home') {%> 
+  <%- include content/c_home.ejs %> <% }%> 
+
+<%- include partials/bottom_nav.ejs %> 
+
+<%- include partials/footer.ejs %> 
+
+
+
