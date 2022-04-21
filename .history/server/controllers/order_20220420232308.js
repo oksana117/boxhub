@@ -71,7 +71,7 @@ module.exports.processFilterOrderList = (req, res, next) => {
 
     Order.findById(id, async(err, orderList )=> {
         let matchingOrder = new Array();
-        let OrderArray = OrdersModel;
+        let OrderArray = OrdersModel.OrderList;
         
         if (status === "" && size === "" && condition === "" && type === "") {
             for (var i = 0; i <OrderArray.length; i++) {
