@@ -1,0 +1,105 @@
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+  
+<!-- list contacts view -->
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <div class="offset-md-0 col-md-15">
+            <h1><%= title %></h1>
+
+            
+            <a href="/order-list/add" class="btn btn-primary" role="button">
+            <i class="fas fa-plus-circle"></i> Add New Order</a>
+           <br><br>
+            <form action="/order-list" method ="post" class="filterForm mb-60">
+              <h4>Filter by:</h4>
+            <div class="row"> 
+              <div class = "col-md-6 col-lg-3 my-3">
+                <div class="input-group position-relative">
+                <input type="text" class="form-control" placeholder="Enter status" name="status" id="statusTextField">
+                </div>
+                 <div class="input-group position-relative">
+                  <input type="text" class="form-control" placeholder="Enter size" name="size" id="sizeTextField">
+                </div>
+                <div class="input-group position-relative">
+                  <input type="text" class="form-control" placeholder="Enter condition" name="condition" id="conditionTextField">
+                </div>
+                <div class="input-group position-relative">
+                   <input type="text" class="form-control" placeholder="Enter type" name="type" id="typeTextField">
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-lg btn-block btn-info btn-custom" id="searchButton">
+                  Search
+                </button>
+              </div>
+             </div>
+            </form>
+
+            <br>
+            <br>
+            <div class="table-responsive">
+            <table class="table table-dark table-sm table-bordered table-striped table-hover  ">
+                <!-- Header Row-->
+                <tr>
+                  
+                    <th class="text-center col-1">ID</th>
+                    <th class="text-center col-1">Date Created</th>
+                    <th class="text-center col-1">Status</th>
+                    <th class="text-center col-2">Customer Name</th>
+                    <th class="text-center col-1">SKU</th>
+                    <th class="text-center col-2">Photo</th>
+                    <th class="text-center col-1">Condition</th>
+                    <th class="text-center col-1">Size</th>
+                    <th class="text-center col-1">Type</th>
+                    <th class="text-center col-2">Origin Address</th>
+                    <th class="text-center col-2">Shipping Address</th>
+                    <th class="text-center col-2">Update</th>
+                    <th class="text-center col-2">Delete</th>
+            
+
+                </tr>
+                    
+               
+
+                
+                <%OrderList.sort((a,b)=> (b.created - a.created));%> 
+                  <tr>
+                       <td class="text-center col-1"><%= OrderList.id %> </td>
+                       <td class="text-center col-2"><%= OrderList.created.toDateString() %></td>
+                       <td class="text-center col-1"><%= OrderList.status %></td>
+                       <td class="text-center col-2"><%= OrderList.customer %></td>
+                       <td class="text-center col-2"><%= OrderList.SKU %></td>
+                       <td class="text-center col-4"><%= OrderList.photo %></td>
+                       <td class="text-center col-4"><%= OrderList[count].condition %></td>
+                       <td class="text-center col-4"><%= OrderList[count].size %></td>
+                       <td class="text-center col-4"><%= OrderList[count].type %></td>
+                       <td class="text-center col-4"><%= OrderList[count].origin_address %></td>
+                       <td class="text-center col-4"><%= OrderList[count].shipping_address %></td>
+
+                     <td class="text-center col-1">
+                     <a href="/order-list/edit/<%= OrderList[count]._id %>" class="btn btn-primary btn-sm">
+                     <i class="fas fa-pencil-alt"></i> Update</a></td>
+                     <td class="text-center col-1">
+                     <a href="/order-list/delete/<%= OrderList[count]._id %>" class="btn btn-danger btn-sm">
+                     <i class="fas fa-trash-alt"></i> Delete</a>
+                       </td></tr> 
+
+               
+               
+            </table>
+            </div>
+        </div>
+    </div>
+  </main>
+  
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
+  
+
+

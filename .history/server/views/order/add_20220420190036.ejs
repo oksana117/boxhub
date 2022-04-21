@@ -1,0 +1,122 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="idTextField">ID </label>
+                    <input type="text" class="form-control"
+                    id="idTextField"
+                    placeholder="Enter order ID"
+                    name="id" required>
+                </div>
+                <div class="form-group">
+                    <label for="createdTextField">Created</label> 
+                    <input type="text" class="form-control"
+                    id="createdTextField"
+                    placeholder="Enter order's date"
+                    name="created" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="statusTextField">Status</label>
+                    <input type="text" class="form-control"
+                    id="statusTextField"
+                    placeholder="Enter order status"
+                    name="status" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="custumerTextField">Customer Name</label>
+                    <input type="text" class="form-control"
+                    id="customerTextField"
+                    placeholder="Enter costumer name"
+                    name="customer" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="statusTextField">SKU</label>
+                    <input type="text" class="form-control"
+                    id="skuTextField"
+                    placeholder="Enter SKU"
+                    name="SKU" required>
+                </div>
+                <form action="/uploadPhoto" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label for="photoTextField">Photo</label>
+                    <br>
+                    <input type="text" class="choose-file-btn" type="file" name="photo"
+                    id="photoTextField"
+                    placeholder="Add picture"
+                   required>
+                    <input class="upload-btn" type="submit" value="Upload Photo" />
+                </div>
+
+                <div class="form-group">
+                    <label for="conditionTextField">Condition</label>
+                    <input type="text" class="form-control"
+                    id="conditionTextField"
+                    placeholder="Enter condition"
+                    name="condition" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sizeTextField">Size</label>
+                    <input type="text" class="form-control"
+                    id="sizeTextField"
+                    placeholder="Enter size"
+                    name="size" required>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="typeTextField">Type</label>
+                    <input type="text" class="form-control"
+                    id="typeTextField"
+                    placeholder="Enter type"
+                    name="type" required>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="originTextField">Origin Address</label>
+                    <input type="text" class="form-control"
+                    id="originTextField"
+                    placeholder="Origin address"
+                    name="origin_address" required>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="shippingTextField">Shipping Address</label>
+                    <input type="text" class="form-control"
+                    id="shippingTextField"
+                    placeholder="Shipping address"
+                    name="shipping_address" required>
+                </div>
+                <br><br>
+                 <a href="/order-list" > <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button> </a> 
+                
+                    <a href="/order-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
+  
+
+
