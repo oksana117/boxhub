@@ -2,7 +2,7 @@
 
 <%- include ../partials/main_nav.ejs %>
 
-<!-- Content for the edit  page -->
+<!-- Content for the Add page -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
@@ -14,18 +14,14 @@
                     <input type="text" class="form-control"
                     id="idTextField"
                     placeholder="Enter order ID"
-                    name="id" 
-                    value="<%= order.id %>"
-                    required>
+                    name="id" required>
                 </div>
                 <div class="form-group">
-                    <label for="createdTextField">Created</label>
+                    <label for="createdTextField">Created</label> 
                     <input type="text" class="form-control"
                     id="createdTextField"
                     placeholder="Enter order's date"
-                    name="created" 
-                    value="<%= order.created %>"
-                    required>
+                    name="created" required>
                 </div>
 
                 <div class="form-group">
@@ -33,9 +29,7 @@
                     <input type="text" class="form-control"
                     id="statusTextField"
                     placeholder="Enter order status"
-                    name="status" 
-                     value="<%= order.status%>"
-                    required>
+                    name="status" required>
                 </div>
 
                 <div class="form-group">
@@ -43,9 +37,7 @@
                     <input type="text" class="form-control"
                     id="customerTextField"
                     placeholder="Enter costumer name"
-                    name="customer" 
-                     value="<%= order.customer %>"
-                    required>
+                    name="customer" required>
                 </div>
 
 
@@ -54,28 +46,20 @@
                     <input type="text" class="form-control"
                     id="skuTextField"
                     placeholder="Enter SKU"
-                    name="SKU" 
-                     value="<%= order.SKU %>"
-                    required>
+                    name="SKU" required>
                 </div>
-
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="photoTextField">Photo</label>
                     <br>
-                    <input  class="choose-file-btn" type="file" name="photo"
-                    id="photoTextField"
-                    value="<%= order.photo %>"
-                   >
+                    <input class="choose-file-btn" type="file" name="photo"
+                   
                 </div>
-      
                 <div class="form-group">
                     <label for="conditionTextField">Condition</label>
                     <input type="text" class="form-control"
                     id="conditionTextField"
                     placeholder="Enter condition"
-                    name="condition" 
-                     value="<%= order.condition %>"
-                    required>
+                    name="condition" required>
                 </div>
 
                 <div class="form-group">
@@ -83,9 +67,7 @@
                     <input type="text" class="form-control"
                     id="sizeTextField"
                     placeholder="Enter size"
-                    name="size" 
-                     value="<%= order.size %>"
-                    required>
+                    name="size" required>
                 </div>
                 
 
@@ -94,9 +76,7 @@
                     <input type="text" class="form-control"
                     id="typeTextField"
                     placeholder="Enter type"
-                    name="type" 
-                     value="<%= order.type %>"
-                    required>
+                    name="type" required>
                 </div>
                 
 
@@ -105,9 +85,7 @@
                     <input type="text" class="form-control"
                     id="originTextField"
                     placeholder="Origin address"
-                    name="origin_address"
-                    value="<%= order.origin_address %>"
-                    required>
+                    name="origin_address" required>
                 </div>
                 
 
@@ -116,17 +94,14 @@
                     <input type="text" class="form-control"
                     id="shippingTextField"
                     placeholder="Shipping address"
-                    name="shipping_address" 
-                     value="<%= order.shipping_address %>"
-                    required>
+                    name="shipping_address" required>
                 </div>
                 <br><br>
-                 <button class="btn btn-primary" type="submit">
-                <i class="fas fa-edit"></i> Submit</button>
+                 <a href="/order-list" > <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button> </a> 
                 
                     <a href="/order-list" class="btn btn-warning">
                         <i class="fas fa-undo"></i> Cancel</a>
-
 
             </form>
         </div>

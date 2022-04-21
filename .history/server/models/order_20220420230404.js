@@ -42,8 +42,9 @@ let OrdersSchema = mongoose.Schema({
     
 },
     {
-    collection: "order"
+    collection: "events"
 });
+);
 
 module.exports.OrdersSchema = mongoose.model("Order", OrdersSchema);
 

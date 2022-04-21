@@ -38,12 +38,11 @@ let OrdersSchema = mongoose.Schema({
     },
     shipping_address: {
         type: String
-    }
-    
-},
+    },
     {
-    collection: "order"
+    collection: "events"
 });
+}
 
 module.exports.OrdersSchema = mongoose.model("Order", OrdersSchema);
 

@@ -57,7 +57,6 @@ module.exports.displayFilterOrderList  = (req, res, next) => {
 
 module.exports.processFilterOrderList = (req, res, next) => {
     let id = req.params.id;
-    
     let status = req.body.status;
     let size = req.body.size;
     let condition = req.body.condition;

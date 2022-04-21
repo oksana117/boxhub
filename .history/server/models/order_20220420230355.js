@@ -40,9 +40,6 @@ let OrdersSchema = mongoose.Schema({
         type: String
     }
     
-},
-    {
-    collection: "order"
 });
 
 module.exports.OrdersSchema = mongoose.model("Order", OrdersSchema);
